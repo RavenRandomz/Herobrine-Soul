@@ -19,6 +19,9 @@ public class SoulClient
 	public SoulClient()
 	{
 		commandHandler = new HerobrineCommandHandler();
+
+		Thread commandHandlerThread = new Thread(commandHandler);
+		commandHandlerThread.start();
 	}
 	public void connect(IPAddressLocation addressLocation) throws UnknownHostException, IOException
 	{
@@ -28,8 +31,6 @@ public class SoulClient
 		Thread herobrineListenerthread = new Thread(herobrineListener);
 		herobrineListenerthread.start();
 
-		Thread commandHandlerThread = new Thread(commandHandler);
-		commandHandlerThread.start();
 
 	}
 
