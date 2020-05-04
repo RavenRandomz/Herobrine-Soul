@@ -29,7 +29,8 @@ public class HerobrineListener implements Runnable
 		{
 			try
 			{
-				dataInputStream.readUTF();
+				String command = dataInputStream.readUTF();
+				soulClient.addHerobrineCommand(command);
 			}
 			catch(IOException e)
 			{
