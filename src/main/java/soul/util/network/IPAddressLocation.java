@@ -10,6 +10,16 @@ public class IPAddressLocation
 		address = IPAddress;
 		this.port = port;
 	}
+
+	public String getAddress()
+	{
+		return address;
+	}
+
+	public int getPort()
+	{
+		return port;
+	}
 }
 
 
