@@ -16,7 +16,7 @@ public class MinecraftWrapper
 		return getMinecraft().player;
 	}
 
-	public void displayMessageInChat(String message)
+	public static void displayMessageInChat(String message)
 	{
 		getMinecraft().ingameGUI.getChatGUI().printChatMessage(new StringTextComponent(message));
 	}
