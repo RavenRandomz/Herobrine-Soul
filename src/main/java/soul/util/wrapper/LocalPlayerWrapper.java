@@ -4,7 +4,7 @@ import soul.util.wrapper.MinecraftWrapper;
 
 public class LocalPlayerWrapper
 {
-	public void sendChat(String message)
+	public static void sendChat(String message)
 	{
 		MinecraftWrapper.getLocalPlayer().sendChatMessage(message);
 
