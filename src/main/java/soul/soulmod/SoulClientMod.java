@@ -1,5 +1,6 @@
 package soul.soulmod;
 
+import net.minecraftforge.event.ServerChatEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,16 +17,24 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import soul.soulclient.SoulClient;
+import soul.util.wrapper.MinecraftWrapper;
+import soul.util.network.IPAddressLocation;
 import java.util.stream.Collectors;
+import java.net.UnknownHostException;
+import java.io.IOException;
+
+import java.util.StringTokenizer;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("soulclientmod")
 public class SoulClientMod
 {
     // Directly reference a log4j logger.
+	private SoulClient soulClient = new SoulClient();
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleMod() {
+    public SoulClientMod() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -64,6 +73,34 @@ public class SoulClientMod
                 map(m->m.getMessageSupplier().get()).
                 collect(Collectors.toList()));
     }
+	@SubscribeEvent
+	public void onChat(ServerChatEvent chatEvent)
+	{
+		StringTokenizer chatTokens = new StringTokenizer(chatEvent.getMessage());
+
+		int tokenCount = chatTokens.countTokens();
+		String firstToken = chatTokens.nextToken();
+		if(firstToken.equals("@connect") && tokenCount == 3)
+		{
+			String address = chatTokens.nextToken();
+			int port = Integer.parseInt(chatTokens.nextToken());
+			IPAddressLocation herobrineLocation = new IPAddressLocation(address, port);
+
+			try
+			{
+				soulClient.connect(herobrineLocation);
+			}
+			catch(UnknownHostException e)
+			{
+				MinecraftWrapper.displayMessageInChat("No Host Connection. Cannot find our lord and savior Herobrine.");
+			}
+			catch(IOException e)
+			{
+				MinecraftWrapper.displayMessageInChat("Stream failed. Herobrine must be busy.");
+			}
+		}
+
+	}
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
