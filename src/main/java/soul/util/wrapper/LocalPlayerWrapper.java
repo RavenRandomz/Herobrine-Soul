@@ -6,8 +6,8 @@ public class LocalPlayerWrapper
 {
 	public static void sendChat(String message)
 	{
-		MinecraftWrapper.getLocalPlayer().sendChatMessage(message);
-
+		MinecraftWrapper.getMinecraft().player.sendChatMessage(message);
+		//MinecraftWrapper.getLocalPlayer().sendChatMessage(message);
 	}
 
 }
