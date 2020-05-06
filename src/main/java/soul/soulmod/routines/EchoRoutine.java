@@ -3,6 +3,7 @@ package soul.soulmod.routines;
 import soul.util.wrapper.LocalPlayerWrapper;
 import soul.soulmod.SoulClientMod;
 import soul.soulmod.routines.IRoutine;
+import soul.soulmod.ModData;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,11 +12,6 @@ import net.minecraftforge.event.ServerChatEvent;
 
 public class EchoRoutine implements IRoutine
 {
-	private SoulClientMod soulClientMod;
-	public EchoRoutine(SoulClientMod soulClientMod)
-	{
-		this.soulClientMod = soulClientMod;
-	}
 	@Override
 	public void activate()
 	{
@@ -38,7 +34,7 @@ public class EchoRoutine implements IRoutine
 	public void onChat(ServerChatEvent chatEvent)
 	{
 		String playerName = chatEvent.getUsername();
-		if(soulClientMod.isUnderKing(playerName))
+		if(ModData.getKings().hasKing(playerName))
 		{
 			if(chatEvent.getMessage().equals("fuck"))
 			{
