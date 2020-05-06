@@ -9,10 +9,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.ServerChatEvent;
 
 
-public class HailRoutine implements IRoutine
+public class EchoRoutine implements IRoutine
 {
 	private SoulClientMod soulClientMod;
-	public HailRoutine(SoulClientMod soulClientMod)
+	public EchoRoutine(SoulClientMod soulClientMod)
 	{
 		this.soulClientMod = soulClientMod;
 	}

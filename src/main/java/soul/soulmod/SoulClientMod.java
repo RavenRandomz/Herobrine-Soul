@@ -1,6 +1,6 @@
 package soul.soulmod;
 
-import soul.soulmod.routines.HailRoutine;
+import soul.soulmod.routines.EchoRoutine;
 
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraft.block.Block;
@@ -38,7 +38,7 @@ public class SoulClientMod
 	private ArrayList<String>kings = new ArrayList<>();
     // Directly reference a log4j logger.
 	private SoulClient soulClient = new SoulClient();
-	private HailRoutine hailRoutine = new HailRoutine(this);
+	private EchoRoutine hailRoutine = new EchoRoutine(this);
     private static final Logger LOGGER = LogManager.getLogger();
 
     public SoulClientMod() {
