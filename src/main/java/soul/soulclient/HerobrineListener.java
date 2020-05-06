@@ -7,6 +7,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
 import java.io.IOException;
+import soul.util.wrapper.MinecraftWrapper;
 public class HerobrineListener implements Runnable
 {
 	private Socket herobrineConnection;
@@ -30,7 +31,7 @@ public class HerobrineListener implements Runnable
 			try
 			{
 				String command = dataInputStream.readUTF();
-				soulClient.addHerobrineCommand(command);
+				soulClient.proccessCommand(command);
 			}
 			catch(IOException e)
 			{
