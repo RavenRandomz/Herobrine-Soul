@@ -1,5 +1,7 @@
 package soul.soulmod;
 
+import soul.soulmod.routines.HailRoutine;
+
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -27,6 +29,7 @@ import java.io.IOException;
 
 import java.util.StringTokenizer;
 
+
 import java.util.ArrayList;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("soulclientmod")
@@ -35,9 +38,13 @@ public class SoulClientMod
 	private ArrayList<String>kings = new ArrayList<>();
     // Directly reference a log4j logger.
 	private SoulClient soulClient = new SoulClient();
+	private HailRoutine hailRoutine = new HailRoutine(this);
     private static final Logger LOGGER = LogManager.getLogger();
 
     public SoulClientMod() {
+		kings.add("1337Sw4g");
+		hailRoutine.activate();
+		
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -81,7 +88,6 @@ public class SoulClientMod
                 map(m->m.getMessageSupplier().get()).
                 collect(Collectors.toList()));
     }
-	/*
 	@SubscribeEvent
 	public void onChat(ServerChatEvent chatEvent)
 	{
@@ -110,7 +116,6 @@ public class SoulClientMod
 		}
 
 	}
-	*/
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
