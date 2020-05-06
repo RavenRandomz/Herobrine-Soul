@@ -12,6 +12,7 @@ public class NameRegistry<E>
 	public NameRegistry()
 	{
 	}
+
 	public NameRegistry(ArrayList<Named> elements)
 	{
 		for(Named element : elements)
@@ -23,6 +24,11 @@ public class NameRegistry<E>
 	{
 		String name = element.getName();
 		namedElementMap.put(name, element);
+	}
+
+	public boolean hasElement(String name)
+	{
+		return namedElementMap.containsKey(name);
 	}
 
 	public E getElement(String name)
