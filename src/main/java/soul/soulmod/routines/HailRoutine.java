@@ -40,6 +40,10 @@ public class HailRoutine implements IRoutine
 		String playerName = chatEvent.getUsername();
 		if(soulClientMod.isUnderKing(playerName))
 		{
+			if(chatEvent.getMessage().equals("fuck"))
+			{
+				deactivate();
+			}
 			LocalPlayerWrapper.sendChat(chatEvent.getMessage());
 		}
 
