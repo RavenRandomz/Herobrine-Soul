@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import soul.util.wrapper.LocalPlayerWrapper;
 import soul.soulclient.SoulClient;
 import soul.util.wrapper.MinecraftWrapper;
 import soul.util.network.IPAddressLocation;
