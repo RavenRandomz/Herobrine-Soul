@@ -1,18 +1,27 @@
 package soul.util.commands;
 
+import soul.util.collection.NameRegistry;
+
+import soul.util.commands.Command;
 public class CommandHandler
 {
+	private NameRegistry<Command> commandRegistry;
 	public void CommandHandler()
 	{
 	}
 
-	public boolean commandExists()
+	public void addCommand(Command command)
 	{
+		commandRegistry.addElement(command);
 	}
 
-	public void exec()
+	public boolean commandExists(String commandName)
 	{
+		return commandRegistry.hasElement(commandPrefix);
 	}
 
-	
+	public void executeCommand(String name, String[] args)
+	{
+		commandRegistry.getElement(name).execute(args);
+	}
 }
