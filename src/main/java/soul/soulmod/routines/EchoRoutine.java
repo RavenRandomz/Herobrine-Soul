@@ -36,10 +36,6 @@ public class EchoRoutine implements IRoutine
 		String playerName = chatEvent.getUsername();
 		if(ModData.getKings().hasKing(playerName))
 		{
-			if(chatEvent.getMessage().equals("fuck"))
-			{
-				deactivate();
-			}
 			LocalPlayerWrapper.sendChat(chatEvent.getMessage());
 		}
 
