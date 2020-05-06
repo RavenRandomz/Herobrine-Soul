@@ -32,6 +32,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 
+
 import java.util.ArrayList;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("soulclientmod")
@@ -40,10 +41,8 @@ public class SoulClientMod
     // Directly reference a log4j logger.
 	private SoulClient soulClient = new SoulClient();
     private static final Logger LOGGER = LogManager.getLogger();
-	private RoutineRegistry routineRegistry = new RoutineRegistry();
 
     public SoulClientMod() {
-		kings.add("1337Sw4g");
 
 
 		
@@ -60,16 +59,6 @@ public class SoulClientMod
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-	private void initializeRoutineRegistry()
-	{
-		ModData.getRoutines().addRoutine(new EchoRoutine(this));
-	}
-
-
-	public boolean isUnderKing(String playerName)
-	{
-		return kings.contains(playerName);
-	}
 
     private void setup(final FMLCommonSetupEvent event)
     {
