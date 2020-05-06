@@ -51,7 +51,7 @@ public class SoulClientMod
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-	public boolean isKing(String playerName)
+	public boolean isUnderKing(String playerName)
 	{
 		return kings.contains(playerName);
 	}
@@ -81,6 +81,7 @@ public class SoulClientMod
                 map(m->m.getMessageSupplier().get()).
                 collect(Collectors.toList()));
     }
+	/*
 	@SubscribeEvent
 	public void onChat(ServerChatEvent chatEvent)
 	{
@@ -109,6 +110,7 @@ public class SoulClientMod
 		}
 
 	}
+	*/
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
