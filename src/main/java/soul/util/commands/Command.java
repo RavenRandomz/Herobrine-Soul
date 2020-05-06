@@ -1,7 +1,9 @@
 package soul.util.commands;
 
-public interface Command
+import soul.util.collection.Named;
+
+public interface Command extends Named
 {
-	public String getCommandPrefix();
+	public String getInvocation();
 	public void execute(String[] args);
 }
