@@ -27,10 +27,12 @@ import java.io.IOException;
 
 import java.util.StringTokenizer;
 
+import java.util.ArrayList;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("soulclientmod")
 public class SoulClientMod
 {
+	private ArrayList<String>kings = new ArrayList<>();
     // Directly reference a log4j logger.
 	private SoulClient soulClient = new SoulClient();
     private static final Logger LOGGER = LogManager.getLogger();
@@ -48,6 +50,11 @@ public class SoulClientMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
+
+	public boolean isKing(String playerName)
+	{
+		return kings.contains(playerName);
+	}
 
     private void setup(final FMLCommonSetupEvent event)
     {
