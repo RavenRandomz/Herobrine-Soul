@@ -1,6 +1,8 @@
 package soul.soulmod;
 
 import soul.soulmod.routines.EchoRoutine;
+import soul.soulmod.routines.RoutineRegistry;
+import soul.soulmod.ModData;
 
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraft.block.Block;
@@ -35,15 +37,15 @@ import java.util.ArrayList;
 @Mod("soulclientmod")
 public class SoulClientMod
 {
-	private ArrayList<String>kings = new ArrayList<>();
     // Directly reference a log4j logger.
 	private SoulClient soulClient = new SoulClient();
-	private EchoRoutine hailRoutine = new EchoRoutine(this);
     private static final Logger LOGGER = LogManager.getLogger();
+	private RoutineRegistry routineRegistry = new RoutineRegistry();
 
     public SoulClientMod() {
 		kings.add("1337Sw4g");
-		hailRoutine.activate();
+
+
 		
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -57,6 +59,12 @@ public class SoulClientMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
+
+	private void initializeRoutineRegistry()
+	{
+		ModData.getRoutines().addRoutine(new EchoRoutine(this));
+	}
+
 
 	public boolean isUnderKing(String playerName)
 	{
