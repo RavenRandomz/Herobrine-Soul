@@ -2,6 +2,7 @@ package soul.soulmod;
 
 import soul.soulmod.kings.KingRegistry;
 import soul.soulmod.routines.RoutineRegistry;
+import soul.soulmod.routines.EchoRoutine;
 public class ModData
 {
 	private static KingRegistry kings = new KingRegistry();
@@ -16,4 +17,5 @@ public class ModData
 	{
 		return routines;
 	}
+
 }
