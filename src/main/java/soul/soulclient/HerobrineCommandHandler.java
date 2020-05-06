@@ -1,24 +1,40 @@
 package soul.soulclient;
 
 import soul.util.wrapper.LocalPlayerWrapper;
-import java.util.LinkedList;
+import soul.util.wrapper.MinecraftWrapper;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 public class HerobrineCommandHandler  implements Runnable
 {
-	private LinkedList<String> unhandledCommands = new LinkedList<>();
+	private BlockingQueue<String> unhandledCommands = new LinkedBlockingQueue<>();
 
 	public void addCommand(String command)
 	{
-		unhandledCommands.add(command);
+		System.out.println("Handling Add");
+
+		try
+		{
+			unhandledCommands.put(command);
+		}
+		catch(Exception e)
+		{
+		}
 	}
 
 	public void run()
 	{
+		System.out.println("StartingCommandHanler");
 		for(;;) //Oldschool fuck yeah
 		{
-			if(!unhandledCommands.isEmpty())
+			try
 			{
-				String command = unhandledCommands.remove();
-				LocalPlayerWrapper.sendChat(command);
+
+			String command = unhandledCommands.take();
+			LocalPlayerWrapper.sendChat(command);
+			}
+			catch(Exception e)
+			{
+
 			}
 
 		}
