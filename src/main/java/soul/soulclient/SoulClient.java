@@ -34,7 +34,7 @@ public class SoulClient
 
 	}
 
-	public void addHerobrineCommand(String command)
+	public void proccessCommand(String command)
 	{
 		commandHandler.addCommand(command);
 	}
