@@ -14,7 +14,7 @@ public class EchoRoutine implements IRoutine
 	@Override
 	public void activate()
 	{
-		MinecraftForge.EVENT_BUS.register(this);
+		//MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class EchoRoutine implements IRoutine
 	@Override
 	public String getName()
 	{
-		return "hail";
+		return "echo";
 	}
 
 	@SubscribeEvent
