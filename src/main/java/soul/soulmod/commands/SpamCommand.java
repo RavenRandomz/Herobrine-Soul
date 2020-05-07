@@ -20,13 +20,20 @@ public class SpamCommand implements Command
 	{
 		String spamMessage = "";
 		ArrayList<String> argList = new ArrayList<>(Arrays.asList(args));
-		for(int i = 0; i < argList.size() - 1; ++i)
-		{
-			spamMessage += argList.get(i) + " ";
-		}
 		ArrayList<String> finalArgs = new ArrayList<>();
-		finalArgs.add(spamMessage);
-		finalArgs.add(argList.get(argList.size()-1));
+		if(argList.size() == 1)
+		{
+			finalArgs.add(argList.get(0));
+		}
+		else
+		{
+			for(int i = 0; i < argList.size() - 1; ++i)
+			{
+				spamMessage += argList.get(i) + " ";
+			}
+			finalArgs.add(spamMessage);
+			finalArgs.add(argList.get(argList.size()-1));
+		}
 
 		ModData.getRoutines().getRoutine("spam").activate(finalArgs.toArray(new String[0]));
 	}
