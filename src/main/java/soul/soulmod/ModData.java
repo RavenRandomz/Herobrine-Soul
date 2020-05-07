@@ -2,7 +2,6 @@ package soul.soulmod;
 
 
 import soul.util.commands.CommandHandler;
-import soul.soulmod.commands.EchoCommand;
 import soul.util.collection.NameRegistry;
 import soul.util.commands.Command;
 import soul.util.collection.Named;
@@ -12,6 +11,9 @@ import soul.soulmod.routines.RoutineRegistry;
 import soul.soulmod.routines.IRoutine;
 import soul.soulmod.routines.EchoRoutine;
 import soul.soulmod.routines.ListenForKingRoutine;
+
+import soul.soulmod.commands.EchoCommand;
+import soul.soulmod.commands.YeeYeeCommand;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +25,10 @@ public class ModData
 			(
 				new ArrayList<Named>
 				(
-				Arrays.asList(new EchoCommand())
+				Arrays.asList(
+					new EchoCommand(),
+					new YeeYeeCommand()
+					)
 				)
 			)
 		);
