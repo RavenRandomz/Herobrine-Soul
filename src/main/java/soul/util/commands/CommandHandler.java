@@ -5,9 +5,14 @@ import soul.util.collection.NameRegistry;
 import soul.util.commands.Command;
 public class CommandHandler
 {
-	private NameRegistry<Command> commandRegistry;
-	public void CommandHandler()
+	private NameRegistry<Command> commandRegistry = new NameRegistry<>();
+	public CommandHandler()
 	{
+	}
+
+	public CommandHandler(NameRegistry<Command> registry)
+	{
+		commandRegistry = registry;
 	}
 
 	public void addCommand(Command command)
@@ -15,9 +20,9 @@ public class CommandHandler
 		commandRegistry.addElement(command);
 	}
 
-	public boolean commandExists(String commandName)
+	public boolean commandExists(String commandInvocation)
 	{
-		return commandRegistry.hasElement(commandPrefix);
+		return commandRegistry.hasElement(commandInvocation);
 	}
 
 	public void executeCommand(String name, String[] args)

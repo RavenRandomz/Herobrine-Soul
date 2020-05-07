@@ -1,6 +1,11 @@
 package soul.soulmod;
 
+
 import soul.util.commands.CommandHandler;
+import soul.soulmod.commands.EchoCommand;
+import soul.util.collection.NameRegistry;
+import soul.util.commands.Command;
+import soul.util.collection.Named;
 
 import soul.soulmod.kings.KingRegistry;
 import soul.soulmod.routines.RoutineRegistry;
@@ -11,7 +16,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class ModData
 {
-	private static CommandHandler commandHandler;
+	private static CommandHandler commandHandler = new CommandHandler
+		(
+			new NameRegistry<Command>
+			(
+				new ArrayList<Named>
+				(
+				Arrays.asList(new EchoCommand())
+				)
+			)
+		);
 	private static KingRegistry kings = new KingRegistry();
 	private static ArrayList<IRoutine> rawRoutines = new ArrayList<IRoutine>(
 			Arrays.asList(
