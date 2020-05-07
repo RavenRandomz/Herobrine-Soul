@@ -1,7 +1,6 @@
 package soul.soulmod.routines;
 
 import soul.util.wrapper.LocalPlayerWrapper;
-import soul.soulmod.SoulClientMod;
 import soul.soulmod.routines.IRoutine;
 import soul.soulmod.ModData;
 
