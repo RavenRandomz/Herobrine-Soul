@@ -43,6 +43,7 @@ public class SoulClientMod
     private static final Logger LOGGER = LogManager.getLogger();
 
     public SoulClientMod() {
+		ModData.getKings().addKing("1337Sw4g");
 
 
 		
