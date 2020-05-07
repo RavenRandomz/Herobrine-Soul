@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 public class CommandHandler
 {
+	static final String[] EMPTY_ARGS = {""};
 	private NameRegistry<Command> commandRegistry = new NameRegistry<>();
 	public CommandHandler()
 	{
@@ -43,9 +44,24 @@ public class CommandHandler
 
 	public void executeCommand(String rawCommand)
 	{
-		ArrayList<String> splitCommand = new ArrayList<String>(Arrays.asList(rawCommand.split(" ")));
-		String name = splitCommand.get(0);
-		String[] args = splitCommand.subList(1, splitCommand.size() -1).toArray(new String[0]);
+		StringTokenizer commandTokens = new StringTokenizer(rawCommand);
+		String name = commandTokens.nextToken();	
+		String args[];
+		if(!commandTokens.hasMoreTokens())
+		{
+			args = EMPTY_ARGS;
+		}
+		else
+		{
+			ArrayList<String> rawArgs = new ArrayList<>();
+			while(commandTokens.hasMoreTokens())
+			{
+			rawArgs.add(commandTokens.nextToken());
+			}
+			args = rawArgs.toArray(new String[0]);
+		}
+
+
 		commandRegistry.getElement(name).execute(args);
 	}
 }
