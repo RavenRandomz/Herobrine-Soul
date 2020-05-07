@@ -9,9 +9,18 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.ServerChatEvent;
 
 
-public class YeeYeeRoutine implements IRoutine
+import java.util.concurrent.ScheduledExecutorService;
+public class SpamRoutine implements IRoutine
 {
-	private static String Yee = "Yee Yee!"; //This string name is illegal. But fuck you, I'm a rebel. Liberate the namez!!!
+	private class Spammer implements Runnable
+	{
+		@Override
+		public void run()
+		{
+			LocalPlayerWrapper.sendChat("Spam");
+
+		}
+	}
 	@Override
 	public void activate()
 	{
