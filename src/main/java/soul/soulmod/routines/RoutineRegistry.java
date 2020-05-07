@@ -15,6 +15,7 @@ public class RoutineRegistry
 	{
 		for(IRoutine routine : routines)
 		{
+			System.out.println("Adding routine: " + routine.getName());
 			addRoutine(routine);
 		}
 	}
@@ -27,5 +28,10 @@ public class RoutineRegistry
 	public IRoutine getRoutine(String name)
 	{
 		return nameRoutineMap.get(name);
+	}
+
+	public boolean hasRoutine(String name)
+	{
+		return nameRoutineMap.containsKey("name");
 	}
 }
