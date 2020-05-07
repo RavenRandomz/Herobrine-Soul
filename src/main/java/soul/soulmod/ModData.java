@@ -10,6 +10,7 @@ import soul.soulmod.kings.KingRegistry;
 import soul.soulmod.routines.RoutineRegistry;
 import soul.soulmod.routines.IRoutine;
 import soul.soulmod.routines.EchoRoutine;
+import soul.soulmod.routines.YeeYeeRoutine;
 import soul.soulmod.routines.ListenForKingRoutine;
 
 import soul.soulmod.commands.EchoCommand;
@@ -36,7 +37,8 @@ public class ModData
 	private static ArrayList<IRoutine> rawRoutines = new ArrayList<IRoutine>(
 			Arrays.asList(
 				new EchoRoutine(),
-				new ListenForKingRoutine()
+				new ListenForKingRoutine(),
+				new YeeYeeRoutine()
 				)
 			);
 	private static RoutineRegistry routines = new RoutineRegistry(rawRoutines);
