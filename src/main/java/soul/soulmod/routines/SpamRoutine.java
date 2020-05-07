@@ -51,7 +51,7 @@ public class SpamRoutine implements IRoutine
 		}
 		Spammer theSpammer = new Spammer(spamMessage);
 		Thread spamThread = new Thread(theSpammer);
-		spammerHandler = periodicExecutor.schedule(spamThread, spamIntervalMilliseconds, TimeUnit.MILLISECONDS);
+		spammerHandler = periodicExecutor.scheduleAtFixedRate(spamThread,0, spamIntervalMilliseconds, TimeUnit.MILLISECONDS);
 	}
 	@Override
 	public void activate()
