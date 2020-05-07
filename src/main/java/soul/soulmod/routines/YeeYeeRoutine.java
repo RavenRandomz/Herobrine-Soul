@@ -19,6 +19,11 @@ public class YeeYeeRoutine implements IRoutine
 	}
 
 	@Override
+	public void activate(String[] args)
+	{
+	}
+
+	@Override
 	public void deactivate()
 	{
 		MinecraftForge.EVENT_BUS.unregister(this);

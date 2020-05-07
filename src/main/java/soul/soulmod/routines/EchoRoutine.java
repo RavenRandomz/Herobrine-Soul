@@ -12,6 +12,10 @@ import net.minecraftforge.event.ServerChatEvent;
 public class EchoRoutine implements IRoutine
 {
 	@Override
+	public void activate(String[] args)
+	{
+	}
+	@Override
 	public void activate()
 	{
 		MinecraftForge.EVENT_BUS.register(this);

@@ -14,6 +14,12 @@ public class ListenForKingRoutine implements IRoutine
 	{
 		activate();
 	}
+
+	@Override
+	public void activate(String[] args)
+	{
+	}
+
 	@Override
 	public void activate()
 	{
