@@ -5,25 +5,25 @@ public class QuotedTokenizer
 {
 	private char quoteChar = '\"';
 	private char delimeterChar = '\"';
-	private LinkedList<String> tokens = new LinkedList<>();
+	private LinkedList<String> leTokens = new LinkedList<>();
 	public QuotedTokenizer(String string)
 	{
-		tokens = quotedTokenize(string);
+		leTokens = quotedTokenize(string);
 	}
 
 	public boolean hasMoreTokens()
 	{
-		return tokens.size() == 0;
+		return leTokens.size() == 0;
 	}
 
 	public int countTokens()
 	{
-		return tokens.size();
+		return leTokens.size();
 	}
 
 	public String nextToken()
 	{
-		return tokens.remove();
+		return leTokens.remove();
 	}
 
 	private LinkedList<String> quotedTokenize(String string)
@@ -70,6 +70,11 @@ public class QuotedTokenizer
 			}
 
 		}
+		if(!currentToken.equals(""))
+		{
+			tokens.add(currentToken);
+		}
+		System.out.println(tokens.toString());
 		return tokens;
 	}
 }
