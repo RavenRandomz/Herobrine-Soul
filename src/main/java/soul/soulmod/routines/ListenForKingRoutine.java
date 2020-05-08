@@ -6,6 +6,8 @@ import soul.soulmod.routines.IRoutine;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.common.MinecraftForge;
+
+import java.util.StringTokenizer;
 public class ListenForKingRoutine implements IRoutine
 {
 	private static String kingPrefix = "My subjects, ";
@@ -55,10 +57,19 @@ public class ListenForKingRoutine implements IRoutine
 		}
 
 		System.out.println("CommandCriteriaPassed");
-		String command = message.substring(kingPrefix.length() - 1);
+		String prefixRemoved = message.substring(kingPrefix.length());
+		StringTokenizer lesTokenz = new StringTokenizer(prefixRemoved);
+		String command = lesTokenz.nextToken();
+		System.out.println(command);
+		String rawArgs = prefixRemoved.substring(command.length() + 1);
+		if(rawArgs == null)
+		{
+			rawArgs = "";
+		}
+		System.out.println(rawArgs);
 			if(ModData.getCommandHandler().commandIsValid(command))
 			{
-				ModData.getCommandHandler().executeCommand(command);
+				ModData.getCommandHandler().executeCommand(command, rawArgs);
 			}
 	}
 }
