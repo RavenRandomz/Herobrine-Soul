@@ -20,7 +20,7 @@ public class SpamRoutine implements IRoutine
 	private String spamMessage;
 	private long spamIntervalMilliseconds;
 	private ScheduledExecutorService periodicExecutor = Executors.newScheduledThreadPool(1);
-	private ScheduledFuture<?> spammerHandler;
+	private ArrayList<ScheduledFuture<Spammer>> spammerHandlers;
 	private class Spammer implements Runnable
 	{
 		private String spamMessage;
@@ -51,7 +51,8 @@ public class SpamRoutine implements IRoutine
 		}
 		Spammer theSpammer = new Spammer(spamMessage);
 		Thread spamThread = new Thread(theSpammer);
-		spammerHandler = periodicExecutor.scheduleAtFixedRate(spamThread,0, spamIntervalMilliseconds, TimeUnit.MILLISECONDS);
+		ScheduledFuture spammerHandler = periodicExecutor.scheduleAtFixedRate(spamThread,0, spamIntervalMilliseconds, TimeUnit.MILLISECONDS);
+		spammerHandlers.add(spammerHandler);
 	}
 	@Override
 	public void activate()
@@ -61,6 +62,10 @@ public class SpamRoutine implements IRoutine
 	@Override
 	public void deactivate()
 	{
+		for(ScheduledFuture<?> spammerHandler : spammerHandlers)
+		{
+			spammerHandler.cancel(true);
+		}
 	}
 
 	@Override
