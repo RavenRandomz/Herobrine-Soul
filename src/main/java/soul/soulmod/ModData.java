@@ -17,6 +17,7 @@ import soul.soulmod.routines.SpamRoutine;
 import soul.soulmod.commands.EchoCommand;
 import soul.soulmod.commands.YeeYeeCommand;
 import soul.soulmod.commands.SpamCommand;
+import soul.soulmod.commands.NoCommand;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,8 +32,8 @@ public class ModData
 				Arrays.asList(
 					new EchoCommand(),
 					new YeeYeeCommand(),
-					new SpamCommand()
-					
+					new SpamCommand(),
+					new NoCommand()
 					)
 				)
 			)
