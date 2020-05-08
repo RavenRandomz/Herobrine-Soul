@@ -15,7 +15,7 @@ public class EchoCommand implements Command, Cancellable
 	}
 
 	@Override
-	public void execute(String[] args)
+	public void execute(String args)
 	{
 		//LocalPlayerWrapper.sendChat("Attempting Echo");
 		//LocalPlayerWrapper.sendChat(new Boolean(ModData.getRoutines().hasRoutine("echo")).toString());
