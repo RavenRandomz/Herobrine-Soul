@@ -34,14 +34,17 @@ public class QuotedTokenizer
 
 		for(char c: string.toCharArray())
 		{
+			System.out.println(c);
 			if(isInQuote)
 			{
 				if(c == quoteChar)
 				{
+					System.out.println("Moving outsicde quote");
 					isInQuote = false;
 				}
 				else 
 				{
+					System.out.println("Adding Char");
 					currentToken += c;
 				}
 				
@@ -50,15 +53,18 @@ public class QuotedTokenizer
 			{
 				if(c == quoteChar)
 				{
+					System.out.println(" Entring char");
 					isInQuote = true;
 				}
 				else if(c == delimeterChar)
 				{
+					System.out.println("Adding token");
 					tokens.add(currentToken);
 					currentToken = "";
 				}
 				else
 				{
+					System.out.println("Adding char");
 					currentToken += c;
 				}
 			}
