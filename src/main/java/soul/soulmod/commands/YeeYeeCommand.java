@@ -21,7 +21,7 @@ public class YeeYeeCommand implements Command, Cancellable
 	}
 
 	@Override
-	public void execute(String[] args)
+	public void execute(String args)
 	{
 		ModData.getRoutines().getRoutine("yee").activate();
 	}
