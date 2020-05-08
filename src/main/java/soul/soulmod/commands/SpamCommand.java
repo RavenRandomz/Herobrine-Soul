@@ -28,12 +28,13 @@ public class SpamCommand implements Command, Cancellable
 	public void execute(String args)
 	{
 		QuotedTokenizer tokens = new QuotedTokenizer(args);
-		String spamInterval = tokens.nextToken();
+		System.out.println(tokens.countTokens());
 		String spamMessage = tokens.nextToken() ;
 		ArrayList<String> arguments = new ArrayList<>();
 		arguments.add(spamMessage);
 		try
 		{
+			String spamInterval = tokens.nextToken();
 			Integer.parseInt(spamInterval);
 			arguments.add(spamInterval);
 		}
