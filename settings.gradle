@@ -1,0 +1,9 @@
+/*
+sourceControl
+{
+	gitRepository("https://github.com/RavenJFelix/HerobrineSoulAPI.git")
+	{
+		producesModule("herobrinesoul")
+	}
+}
+*/
