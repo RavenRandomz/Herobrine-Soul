@@ -5,8 +5,6 @@ import soul.util.collection.NameRegistry;
 import soul.util.commands.Command;
 
 import java.util.StringTokenizer;
-import java.util.ArrayList;
-import java.util.Arrays;
 public class CommandHandler
 {
 	static final String[] EMPTY_ARGS = {""};
@@ -37,36 +35,13 @@ public class CommandHandler
 		
 	}
 
-	public void executeCommand(String name, String[] args)
+	public void executeCommand(String name, String rawArgs)
 	{
-		commandRegistry.getElement(name).execute(args);
+		commandRegistry.getElement(name).execute(rawArgs);
 	}
 
 	public Command getCommand(String name)
 	{
 		return commandRegistry.getElement(name);
-	}
-
-	public void executeCommand(String rawCommand)
-	{
-		StringTokenizer commandTokens = new StringTokenizer(rawCommand);
-		String name = commandTokens.nextToken();	
-		String args[];
-		if(!commandTokens.hasMoreTokens())
-		{
-			args = EMPTY_ARGS;
-		}
-		else
-		{
-			ArrayList<String> rawArgs = new ArrayList<>();
-			while(commandTokens.hasMoreTokens())
-			{
-			rawArgs.add(commandTokens.nextToken());
-			}
-			args = rawArgs.toArray(new String[0]);
-		}
-
-
-		commandRegistry.getElement(name).execute(args);
 	}
 }
