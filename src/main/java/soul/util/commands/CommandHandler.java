@@ -37,6 +37,8 @@ public class CommandHandler
 
 	public void executeCommand(String name, String rawArgs)
 	{
+		System.out.println(name);
+		System.out.println(rawArgs);
 		commandRegistry.getElement(name).execute(rawArgs);
 	}
 
