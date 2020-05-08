@@ -2,17 +2,25 @@ package soul.soulmod.commands;
 
 import soul.soulmod.ModData;
 import soul.util.commands.Command;
+import soul.util.commands.Cancellable;
 
 import soul.util.wrapper.LocalPlayerWrapper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-public class SpamCommand implements Command
+public class SpamCommand implements Command, Cancellable
 {
 	@Override
 	public String getInvocation()
 	{
 		return "spam";
+	}
+
+	@Override
+	public void cancel()
+	{
+
+		ModData.getRoutines().getRoutine("spam").deactivate();
 	}
 
 	@Override
