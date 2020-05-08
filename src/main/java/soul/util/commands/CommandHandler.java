@@ -42,6 +42,11 @@ public class CommandHandler
 		commandRegistry.getElement(name).execute(args);
 	}
 
+	public Command getCommand(String name)
+	{
+		return commandRegistry.getElement(name);
+	}
+
 	public void executeCommand(String rawCommand)
 	{
 		StringTokenizer commandTokens = new StringTokenizer(rawCommand);
