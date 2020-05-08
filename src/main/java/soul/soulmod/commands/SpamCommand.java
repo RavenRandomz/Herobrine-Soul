@@ -8,6 +8,7 @@ import soul.util.wrapper.LocalPlayerWrapper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import soul.util.commands.QuotedTokenizer;
 public class SpamCommand implements Command, Cancellable
 {
 	@Override
@@ -24,26 +25,23 @@ public class SpamCommand implements Command, Cancellable
 	}
 
 	@Override
-	public void execute(String[] args)
+	public void execute(String args)
 	{
-		String spamMessage = "";
-		ArrayList<String> argList = new ArrayList<>(Arrays.asList(args));
-		ArrayList<String> finalArgs = new ArrayList<>();
-		if(argList.size() == 1)
+		QuotedTokenizer tokens = new QuotedTokenizer(args);
+		String spamInterval = tokens.nextToken();
+		String spamMessage = tokens.nextToken() ;
+		ArrayList<String> arguments = new ArrayList<>();
+		arguments.add(spamMessage);
+		try
 		{
-			finalArgs.add(argList.get(0));
+			Integer.parseInt(spamInterval);
+			arguments.add(spamInterval);
 		}
-		else
+		catch(Exception e)
 		{
-			for(int i = 0; i < argList.size() - 1; ++i)
-			{
-				spamMessage += argList.get(i) + " ";
-			}
-			finalArgs.add(spamMessage);
-			finalArgs.add(argList.get(argList.size()-1));
 		}
 
-		ModData.getRoutines().getRoutine("spam").activate(finalArgs.toArray(new String[0]));
+		ModData.getRoutines().getRoutine("spam").activate(arguments.toArray(new String[0]));
 	}
 
 	@Override
