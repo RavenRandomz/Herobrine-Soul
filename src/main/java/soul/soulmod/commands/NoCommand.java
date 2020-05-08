@@ -15,8 +15,9 @@ public class NoCommand implements Command
 	}
 
 	@Override
-	public void execute(String[] args)
+	public void execute(String rawArgs)
 	{
+		String[] args = rawArgs.split(" ");
 		String commandName = args[0];
 
 		Command possibleCancel =  ModData.getCommandHandler().getCommand(commandName);
