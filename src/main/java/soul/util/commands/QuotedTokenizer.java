@@ -16,6 +16,11 @@ public class QuotedTokenizer
 		return tokens.size() == 0;
 	}
 
+	public int countTokens()
+	{
+		return tokens.size();
+	}
+
 	public String nextToken()
 	{
 		return tokens.remove();
