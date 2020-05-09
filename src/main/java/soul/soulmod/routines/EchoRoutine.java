@@ -1,15 +1,16 @@
 package soul.soulmod.routines;
 
 import soul.util.wrapper.LocalPlayerWrapper;
-import soul.soulmod.routines.IRoutine;
 import soul.soulmod.ModData;
+
+import herobrinesoul.routines.Routine;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.ServerChatEvent;
 
 
-public class EchoRoutine implements IRoutine
+public class EchoRoutine implements Routine
 {
 	@Override
 	public void activate(String[] args)
