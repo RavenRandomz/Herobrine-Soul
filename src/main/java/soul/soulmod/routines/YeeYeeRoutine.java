@@ -1,8 +1,9 @@
 package soul.soulmod.routines;
 
 import soul.util.wrapper.LocalPlayerWrapper;
-import soul.soulmod.routines.IRoutine;
 import soul.soulmod.ModData;
+
+import herobrinesoult.routines.Routine;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
