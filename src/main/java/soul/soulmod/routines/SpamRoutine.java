@@ -1,8 +1,9 @@
 package soul.soulmod.routines;
 
 import soul.util.wrapper.LocalPlayerWrapper;
-import soul.soulmod.routines.IRoutine;
 import soul.soulmod.ModData;
+
+import herobrinesoul.routines.Routine;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,7 +15,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-public class SpamRoutine implements IRoutine
+public class SpamRoutine implements Routine
 {
 	private static long DEFAULT_SPAM_INTERVAL_MS = 1000;
 	private String spamMessage;
