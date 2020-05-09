@@ -1,7 +1,7 @@
 package soul.soulclient;
 import java.net.Socket;
 
-import soul.util.network.IPAddressLocation;
+import herobrinesoul.network.IPAddressLocation;
 import soul.soulclient.HerobrineCommandHandler;
 
 import java.net.UnknownHostException;
