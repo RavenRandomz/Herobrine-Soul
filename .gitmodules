@@ -1,0 +1,3 @@
+[submodule "libs/HerobrineSoulAPI"]
+	path = libs/HerobrineSoulAPI
+	url = https://github.com/RavenJFelix/HerobrineSoulAPI.git
