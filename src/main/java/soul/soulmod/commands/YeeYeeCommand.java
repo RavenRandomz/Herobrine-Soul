@@ -1,8 +1,8 @@
 package soul.soulmod.commands;
 
 import soul.soulmod.ModData;
-import soul.util.commands.Command;
-import soul.util.commands.Cancellable;
+import herobrinesoul.commands.Command;
+import herobrinesoul.commands.Cancellable;
 
 import soul.util.wrapper.LocalPlayerWrapper;
 
