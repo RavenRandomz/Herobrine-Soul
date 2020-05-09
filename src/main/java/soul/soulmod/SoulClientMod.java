@@ -1,8 +1,9 @@
 package soul.soulmod;
 
 import soul.soulmod.routines.EchoRoutine;
-import soul.soulmod.routines.RoutineRegistry;
 import soul.soulmod.ModData;
+
+import herobrinesoul.routines.RoutineRegistry;
 
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraft.block.Block;
