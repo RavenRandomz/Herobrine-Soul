@@ -1,14 +1,15 @@
 package soul.soulmod.routines;
 
 import soul.soulmod.ModData;
-import soul.soulmod.routines.IRoutine;
+
+import herobrinesoul.routines.Routine;
 
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.StringTokenizer;
-public class ListenForKingRoutine implements IRoutine
+public class ListenForKingRoutine implements Routine
 {
 	private static String kingPrefix = "My subjects, ";
 
