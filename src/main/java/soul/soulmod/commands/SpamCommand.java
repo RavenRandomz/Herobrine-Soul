@@ -1,14 +1,15 @@
 package soul.soulmod.commands;
 
 import soul.soulmod.ModData;
-import soul.util.commands.Command;
-import soul.util.commands.Cancellable;
 
+import herobrinesoul.commands.Command;
+import herobrinesoul.commands.Cancellable;
+
+import herobrinesoul.commands.QuotedTokenizer;
 import soul.util.wrapper.LocalPlayerWrapper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import soul.util.commands.QuotedTokenizer;
 public class SpamCommand implements Command, Cancellable
 {
 	@Override
