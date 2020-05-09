@@ -1,9 +1,3 @@
-/*
-sourceControl
-{
-	gitRepository("https://github.com/RavenJFelix/HerobrineSoulAPI.git")
-	{
-		producesModule("herobrinesoul")
-	}
-}
-*/
+include ':herobrinesoul'
+project(':herobrinesoul').projectDir = new File("libs/HerobrineSoulAPI")
+
