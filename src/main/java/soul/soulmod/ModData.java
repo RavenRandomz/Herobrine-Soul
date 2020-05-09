@@ -1,11 +1,5 @@
 package soul.soulmod;
 
-
-import soul.util.commands.CommandHandler;
-import soul.util.collection.NameRegistry;
-import soul.util.commands.Command;
-import soul.util.collection.Named;
-
 import soul.soulmod.kings.KingRegistry;
 import soul.soulmod.routines.RoutineRegistry;
 import soul.soulmod.routines.IRoutine;
@@ -18,6 +12,11 @@ import soul.soulmod.commands.EchoCommand;
 import soul.soulmod.commands.YeeYeeCommand;
 import soul.soulmod.commands.SpamCommand;
 import soul.soulmod.commands.NoCommand;
+
+import herobrinesoul.commands.CommandHandler;
+import herobrinesoul.collection.NameRegistry;
+import herobrinesoul.commands.Command;
+import herobrinesoul.collection.Named;
 
 import java.util.ArrayList;
 import java.util.Arrays;
