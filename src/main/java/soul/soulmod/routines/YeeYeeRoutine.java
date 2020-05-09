@@ -3,14 +3,14 @@ package soul.soulmod.routines;
 import soul.util.wrapper.LocalPlayerWrapper;
 import soul.soulmod.ModData;
 
-import herobrinesoult.routines.Routine;
+import herobrinesoul.routines.Routine;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.ServerChatEvent;
 
 
-public class YeeYeeRoutine implements IRoutine
+public class YeeYeeRoutine implements Routine
 {
 	private static String Yee = "Yee Yee!"; //This string name is illegal. But fuck you, I'm a rebel. Liberate the namez!!!
 	@Override
