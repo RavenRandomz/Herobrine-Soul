@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 import soul.util.wrapper.LocalPlayerWrapper;
 import soul.soulclient.SoulClient;
 import soul.util.wrapper.MinecraftWrapper;
-import soul.util.network.IPAddressLocation;
+import herobrinesoul.network.IPAddressLocation;
 import java.util.stream.Collectors;
 import java.net.UnknownHostException;
 import java.io.IOException;
