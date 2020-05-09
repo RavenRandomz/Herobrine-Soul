@@ -1,8 +1,6 @@
 package soul.soulmod;
 
 import soul.soulmod.kings.KingRegistry;
-import soul.soulmod.routines.RoutineRegistry;
-import soul.soulmod.routines.IRoutine;
 import soul.soulmod.routines.EchoRoutine;
 import soul.soulmod.routines.YeeYeeRoutine;
 import soul.soulmod.routines.ListenForKingRoutine;
@@ -17,6 +15,9 @@ import herobrinesoul.commands.CommandHandler;
 import herobrinesoul.collection.NameRegistry;
 import herobrinesoul.commands.Command;
 import herobrinesoul.collection.Named;
+
+import herobrinesoul.routines.RoutineRegistry;
+import herobrinesoul.routines.Routine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +39,7 @@ public class ModData
 			)
 		);
 	private static KingRegistry kings = new KingRegistry();
-	private static ArrayList<IRoutine> rawRoutines = new ArrayList<IRoutine>(
+	private static ArrayList<Routine> rawRoutines = new ArrayList<Routine>(
 			Arrays.asList(
 				new EchoRoutine(),
 				new ListenForKingRoutine(),
