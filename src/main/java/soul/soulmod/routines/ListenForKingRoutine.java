@@ -11,7 +11,7 @@ import net.minecraftforge.common.MinecraftForge;
 import java.util.StringTokenizer;
 public class ListenForKingRoutine implements Routine
 {
-	private static String kingPrefix = "My subjects, ";
+	private static String kingPrefix = "My subjects,";
 
 	public ListenForKingRoutine()
 	{
