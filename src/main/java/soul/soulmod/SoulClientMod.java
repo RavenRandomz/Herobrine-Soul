@@ -32,8 +32,6 @@ import java.io.IOException;
 
 import java.util.StringTokenizer;
 
-
-
 import java.util.ArrayList;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("soulclientmod")
@@ -45,9 +43,6 @@ public class SoulClientMod
 
     public SoulClientMod() {
 		ModData.getKings().addKing("1337Sw4g");
-
-
-		
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
